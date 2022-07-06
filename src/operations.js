@@ -1,9 +1,9 @@
-import storage from './storage.js';
+import Storage from './storage.js';
 import expand from './expand.png';
 
 export default class Operations {
   static getTaskList() {
-    const taskList = storage.getData('taskList');
+    const taskList = Storage.getData('taskList');
     const ul = document.getElementById('list');
     ul.innerHTML = ' ';
     for (let i = 0; i < taskList.length; i += 1) {
@@ -39,37 +39,37 @@ export default class Operations {
 
     if (deserializedTaskList !== null) {
       deserializedTaskList.push(taskObj);
-      storage.saveData(deserializedTaskList);
+      Storage.saveData(deserializedTaskList);
     }
 
     Operations.getTaskList();
   }
 
   static removeFromList() {
-    const taskList = storage.getData('taskList');
-    const temp = taskList.filter((item) => item.completed != true);
+    const taskList = Storage.getData('taskList');
+    const temp = taskList.filter((item) => item.completed !== true);
     let i = 0;
-    temp.forEach( (element) => {
-      i = i + 1;
+    temp.forEach((element) => {
+      i += 1;
       element.index = i;
     });
-    storage.saveData(temp);
+    Storage.saveData(temp);
     Operations.getTaskList();
   }
 
   static cbxHandler(e) {
-    const index = e.target.id;
-    const taskListObj = storage.getData('taskList');
-    const task = taskListObj.find( (t) => t.index == index);
+    const index = parseInt(e.target.id);
+    const taskListObj = Storage.getData('taskList');
+    const task = taskListObj.find((t) => t.index === index);
     task.completed = e.target.checked;
-    storage.saveData(taskListObj);
+    Storage.saveData(taskListObj);
   }
 
   static updateValue(e) {
-    const index = e.target.id;
-    const taskListObj = storage.getData('taskList');
-    const task = taskListObj.find( (t) => t.index == index);
+    const index = parseInt(e.target.id);
+    const taskListObj = Storage.getData('taskList'); 
+    const task = taskListObj.find((task) => task.index === index);
     task.description = e.target.value;
-    storage.saveData(taskListObj);
+    Storage.saveData(taskListObj);
   }
 }

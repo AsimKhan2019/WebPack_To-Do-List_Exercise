@@ -2,8 +2,8 @@ import './style.css';
 import refresh from './refresh.png';
 import enter from './enter.png';
 import operations from './operations.js';
-import data from './Data.js';
-import storage from './storage.js';
+import Data from './Data.js';
+import Storage from './storage.js';
 
 const getImage = () => {
   const imageHolder = document.getElementById('imageRefresh');
@@ -18,12 +18,12 @@ const btnSubmit = document.getElementById('addTask');
 btnSubmit.addEventListener('click', () => {
   let index = 0;
   let description = ' ';
-  let isChecked = false;
+  const isChecked = false;
   let taskListObj = [];
 
   description = document.getElementById('task').value;
 
-  taskListObj = storage.getData('taskList');
+  taskListObj = Storage.getData('taskList');
 
   if (taskListObj !== null && taskListObj.length > 0) {
     const lastObject = taskListObj[taskListObj.length - 1];
@@ -33,7 +33,7 @@ btnSubmit.addEventListener('click', () => {
     taskListObj = [];
   }
 
-  const addTasks = new data(description, isChecked, index);
+  const addTasks = new Data(description, isChecked, index);
   operations.addToList(addTasks);
 
   document.getElementById('task').value = '';
