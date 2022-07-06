@@ -3,7 +3,6 @@ import expand from './expand.png';
 
 export default class Operations {
   static getTaskList() {
-    let tasks = ' ';
     const taskList = storage.getData('taskList');
     const ul = document.getElementById('list');
     ul.innerHTML = ' ';
@@ -19,8 +18,8 @@ export default class Operations {
       cbx.checked = taskList[i].completed;
       cbx.id = taskList[i].index;
       cbx.classList.add('checkbox');
-      cbx.addEventListener('change', e => this.cbxHandler(e));
-      span.addEventListener('change', e =>  this.updateValue(e));
+      cbx.addEventListener('change', (e) => this.cbxHandler(e));
+      span.addEventListener('change', (e) => this.updateValue(e));
       img.src = expand;
       anchor.appendChild(img);
       span.value = taskList[i].description;
@@ -38,7 +37,7 @@ export default class Operations {
       deserializedTaskList = [];
     }
 
-    if(deserializedTaskList !== null) {
+    if (deserializedTaskList !== null) {
       deserializedTaskList.push(taskObj);
       storage.saveData(deserializedTaskList);
     }
@@ -48,27 +47,28 @@ export default class Operations {
 
   static removeFromList() {
     const taskList = storage.getData('taskList');
-    const temp = taskList.filter((item) => item.completed !== true);
-    let i = 1;
-    temp.forEach(element => {
-      element.index = i++;
+    const temp = taskList.filter((item) => item.completed != true);
+    let i = 0;
+    temp.forEach( (element) => {
+      i = i + 1;
+      element.index = i;
     });
     storage.saveData(temp);
     Operations.getTaskList();
   }
 
-  static cbxHandler(e){
-    let index = e.target.id;
-    let taskListObj = storage.getData('taskList');
-    let task = taskListObj.find(t => t.index === index);
+  static cbxHandler(e) {
+    const index = e.target.id;
+    const taskListObj = storage.getData('taskList');
+    const task = taskListObj.find( (t) => t.index == index);
     task.completed = e.target.checked;
     storage.saveData(taskListObj);
   }
 
   static updateValue(e) {
-    let index = e.target.id;
-    let taskListObj = storage.getData('taskList');
-    let task = taskListObj.find(t => t.index === index);
+    const index = e.target.id;
+    const taskListObj = storage.getData('taskList');
+    const task = taskListObj.find( (t) => t.index == index);
     task.description = e.target.value;
     storage.saveData(taskListObj);
   }

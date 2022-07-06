@@ -50,16 +50,12 @@ section {
   padding: 10px;
 }
 
-/*h6 {
-  display: none;
-}*/
-
-#formTask{
+#formTask {
   width: 100%;
   display: flex;
 }
 
-#formTask button{
+#formTask button {
   border: none;
   background: none;
   cursor: pointer;
