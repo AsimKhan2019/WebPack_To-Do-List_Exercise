@@ -31,7 +31,7 @@ export default class Operations {
   }
 
   static addToList(taskObj) {
-    let deserializedTaskList = storage.getData('taskList');
+    let deserializedTaskList = Storage.getData('taskList');
 
     if (deserializedTaskList === null) {
       deserializedTaskList = [];
@@ -58,7 +58,7 @@ export default class Operations {
   }
 
   static cbxHandler(e) {
-    const index = parseInt(e.target.id);
+    const index = parseInt(e.target.id, 10);
     const taskListObj = Storage.getData('taskList');
     const task = taskListObj.find((t) => t.index === index);
     task.completed = e.target.checked;
@@ -66,8 +66,8 @@ export default class Operations {
   }
 
   static updateValue(e) {
-    const index = parseInt(e.target.id);
-    const taskListObj = Storage.getData('taskList'); 
+    const index = parseInt(e.target.id, 10);
+    const taskListObj = Storage.getData('taskList');
     const task = taskListObj.find((task) => task.index === index);
     task.description = e.target.value;
     Storage.saveData(taskListObj);
