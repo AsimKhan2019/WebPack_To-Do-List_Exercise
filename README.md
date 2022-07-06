@@ -11,7 +11,7 @@
 - Visual Studio Code and GitHub
 
 ## Live Demo (if available)
-[https://asimkhan2019.github.io/WebPack_To-Do-List_Exercise/](https://asimkhan2019.github.io/WebPack_To-Do-List_Exercise/)
+
 
 ## Getting Started
 
