@@ -1,28 +1,59 @@
-import _ from 'lodash';
 import './style.css';
-import Icon from './icon.png';
-import printMe from './print.js';
+import refresh from './refresh.png';
+import enter from './enter.png';
+import expand from './expand.png';
 
- function component() {
-   const element = document.createElement('div');
-   const btn = document.createElement('button');
+const ToDoListData = [
+  {
+    description: 'Complete the project',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Apply checks and linters',
+    completed: true,
+    index: 2,
+  },
+  {
+    description: 'Fix errors',
+    completed: false,
+    index: 3,
+  },
+  {
+    description: 'Deploy code',
+    completed: false,
+    index: 4,
+  },
+];
 
-  // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-   element.classList.add('hello');
+const getImage = () => {
+  const imageHolder = document.getElementById('imageRefresh');
+  imageHolder.src = refresh;
 
-   // Add the image to our existing div.
-    const myIcon = new Image();
-    myIcon.src = Icon;
+  const imageEnter = document.getElementById('imageEnter');
+  imageEnter.src = enter;
+};
 
-    element.appendChild(myIcon);
+const TodoComponent = () => {
+  const ul = document.getElementById('list');
+  for (let i = 0; i < ToDoListData.length; i += 1) {
+    const li = document.createElement('li');
+    const cbx = document.createElement('input');
+    const span = document.createElement('span');
+    const anchor = document.createElement('a');
+    const img = document.createElement('img');
+    cbx.type = 'checkbox';
+    cbx.checked = ToDoListData[i].completed;
+    cbx.id = ToDoListData[i].index;
+    img.src = expand;
+    anchor.appendChild(img);
+    span.innerHTML = ToDoListData[i].description;
+    li.appendChild(cbx);
+    li.appendChild(span);
+    li.appendChild(anchor);
+    ul.appendChild(li);
+  }
+};
 
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
-
-    element.appendChild(btn);
-
-   return element;
- }
-
- document.body.appendChild(component());
+TodoComponent();
+getImage();

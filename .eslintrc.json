@@ -11,12 +11,18 @@
   },
   "extends": ["airbnb-base"],
   "rules": {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
     "import/extensions": [ 1, {
       "js": "always", "json": "always"
     }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {}
+    }
   },
   "ignorePatterns": [
     "dist/",
