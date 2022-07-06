@@ -14,20 +14,25 @@
     </header>
     
     <section class="reading">
-      <h6>Add Chores</h6>
-      <input type="text" placeholder="Add to your list..." />
-      <a><img id="imageEnter" src="./enter.png" alt="enter button comes here" title="enter button"/></a>
+      <!-- <h6>Add Chores</h6> -->
+      <form id="formTask">
+        <input id="task" type="text" placeholder="Add to your list..." />
+        <button type="submit" id="addTask">
+          <img id="imageEnter" src="./enter.png" alt="enter button comes here" title="enter button"/>
+        </button>
+      </form>
+      
     </section>
   
     <section class="listing">
-      <h6>List</h6>
+      <!--<h6>List</h6>-->
       <ul id="list">
       </ul>
     </section>
 
     <section class="footing">
-      <h6>Footer</h6>
-      <button type="submit">Clear all completed</button>
+      <!--<h6>Footer</h6>-->
+      <button id="remove" type="submit">Clear all completed</button>
     </section>
   </div>
 </body>
