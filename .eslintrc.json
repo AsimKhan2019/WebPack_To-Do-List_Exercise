@@ -18,6 +18,11 @@
       "js": "always", "json": "always"
     }]
   },
+  "settings": {
+    "import/resolver": {
+      "node": {}
+    }
+  },
   "ignorePatterns": [
     "dist/",
     "build/"
