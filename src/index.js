@@ -41,7 +41,7 @@ const TodoComponent = () => {
     const cbx = document.createElement('input');
     const span = document.createElement('span');
     const anchor = document.createElement('a');
-    const img = document.createElement('img');    
+    const img = document.createElement('img');
     cbx.type = 'checkbox';
     cbx.checked = ToDoListData[i].completed;
     cbx.id = ToDoListData[i].index;
@@ -53,7 +53,7 @@ const TodoComponent = () => {
     li.appendChild(anchor);
     ul.appendChild(li);
   }
- };
+};
 
 TodoComponent();
 getImage();
