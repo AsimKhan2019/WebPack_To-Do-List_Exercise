@@ -71,7 +71,6 @@ export default class Operations {
 
     const taskList = Storage.getData('taskList');
     const temp = taskList;
-    
     let i = 0;
     temp.forEach((element) => {
       i += 1;
@@ -99,11 +98,10 @@ export default class Operations {
   }
 
   static changeIcon(e) {
-    const index = parseInt(e.target.id, 10);
-    e.target.parentElement.querySelector("img").src = trash;
+    e.target.parentElement.querySelector('img').src = trash;
   }
 
-  static resetIcon(e){
-    e.target.parentElement.querySelector("img").src = expand;
+  static resetIcon(e) {
+    e.target.parentElement.querySelector('img').src = expand;
   }
 }
