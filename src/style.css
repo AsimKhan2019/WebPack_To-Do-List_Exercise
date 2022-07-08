@@ -90,3 +90,7 @@ section {
 #list li img {
   height: 15px;
 }
+
+#list li a {
+  cursor: pointer;
+}
