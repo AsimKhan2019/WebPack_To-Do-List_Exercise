@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+<script defer src="WebPack_To-Do-List_Exercise/runtime.bundle.js"></script><script defer src="WebPack_To-Do-List_Exercise/index.bundle.js"></script></head>
+<body>
+  <div class="center">
+    <header class="heading">
+      <span>Today's To Do List</span>
+      <a><img id="imageRefresh" src="./refresh.png" alt="refresh button comes here" title="refresh button"/></a>
+    </header>
+    
+    <section class="reading">
+      <!-- <h6>Add Chores</h6> -->
+      <form id="formTask">
+        <input id="task" type="text" placeholder="Add to your list..." />
+        <button type="submit" id="addTask">
+          <img id="imageEnter" src="./enter.png" alt="enter button comes here" title="enter button"/>
+        </button>
+      </form>
+      
+    </section>
+  
+    <section class="listing">
+      <!--<h6>List</h6>-->
+      <ul id="list">
+      </ul>
+    </section>
+
+    <section class="footing">
+      <!--<h6>Footer</h6>-->
+      <button id="remove" type="submit">Clear all completed</button>
+    </section>
+  </div>
+</body>
+</html>
