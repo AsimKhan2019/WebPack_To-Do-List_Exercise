@@ -20,7 +20,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: 'WebPack_To-Do-List_Exercise',
+    publicPath: '/',
   },
   optimization: {
     runtimeChunk: 'single',
