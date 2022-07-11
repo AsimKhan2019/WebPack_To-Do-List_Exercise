@@ -5,7 +5,7 @@ import trash from './trash.png';
 export default class Operations {
   static getTaskList() {
     const taskList = Storage.getData('taskList');
-    if(taskList === null) {
+    if (taskList === null) {
       return;
     }
     const ul = document.getElementById('list');
