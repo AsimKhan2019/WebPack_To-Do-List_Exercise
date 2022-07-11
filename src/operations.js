@@ -5,6 +5,9 @@ import trash from './trash.png';
 export default class Operations {
   static getTaskList() {
     const taskList = Storage.getData('taskList');
+    if(taskList === null) {
+      return;
+    }
     const ul = document.getElementById('list');
     ul.innerHTML = ' ';
     for (let i = 0; i < taskList.length; i += 1) {
