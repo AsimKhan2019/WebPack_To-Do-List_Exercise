@@ -108,4 +108,3 @@ export default class Operations {
     e.target.parentElement.querySelector('img').src = expand;
   }
 }
-

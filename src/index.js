@@ -15,7 +15,7 @@ const getImage = () => {
 
 const btnSubmit = document.getElementById('addTask');
 
-export function addDatatoList() {
+function addDatatoList() {
   let index = 0;
   let description = ' ';
   const isChecked = false;
