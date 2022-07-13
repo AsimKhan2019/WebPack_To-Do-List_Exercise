@@ -1,6 +1,6 @@
 import Storage from './storage.js';
-import expand from './expand.png';
-import trash from './trash.png';
+import { expand } from './expand.png';
+import { trash } from './trash.png';
 
 export default class Operations {
   static getTaskList() {
