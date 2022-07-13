@@ -1,6 +1,6 @@
 import Storage from './storage.js';
-import expand from './expand.png';
-import trash from './trash.png';
+import { expand } from './expand.png';
+import { trash } from './trash.png';
 
 export default class Operations {
   static getTaskList() {
@@ -28,7 +28,7 @@ export default class Operations {
       span.addEventListener('change', (e) => this.updateValue(e));
       span.addEventListener('click', (e) => this.changeIcon(e));
       span.addEventListener('blur', (e) => this.resetIcon(e));
-      anchor.addEventListener('click', (e) => this.deleteFromList(e));
+      anchor.addEventListener('click', (e) => this.deleteFromList(e.target));
       img.src = expand;
       anchor.appendChild(img);
       span.value = taskList[i].description;
@@ -67,7 +67,7 @@ export default class Operations {
   }
 
   static deleteFromList(e) {
-    const index = parseInt(e.target.parentElement.id, 10);
+    const index = parseInt(e.parentElement.id, 10);
     const taskList1 = Storage.getData('taskList');
     const temp1 = taskList1.filter((item) => item.index !== index);
     Storage.saveData(temp1);

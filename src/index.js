@@ -15,7 +15,7 @@ const getImage = () => {
 
 const btnSubmit = document.getElementById('addTask');
 
-btnSubmit.addEventListener('click', () => {
+function addDatatoList() {
   let index = 0;
   let description = ' ';
   const isChecked = false;
@@ -37,6 +37,10 @@ btnSubmit.addEventListener('click', () => {
   operations.addToList(addTasks);
 
   document.getElementById('task').value = '';
+}
+
+btnSubmit.addEventListener('click', () => {
+  addDatatoList();
 });
 
 const btnRemove = document.getElementById('remove');
