@@ -16,27 +16,27 @@ export default class Operations {
       const span = document.createElement('input');
       const anchor = document.createElement('a');
       const img = document.createElement('img');
-      
+
       span.type = 'text';
       span.id = taskList[i].index;
-      
+
       li.id = taskList[i].index;
       anchor.id = taskList[i].index;
       cbx.type = 'checkbox';
       cbx.checked = taskList[i].completed;
       cbx.id = taskList[i].index;
       cbx.classList.add('checkbox');
-      
+
       cbx.addEventListener('change', (e) => this.cbxHandler(e.target));
       span.addEventListener('change', (e) => this.updateValue(e.target));
       span.addEventListener('click', (e) => this.changeIcon(e));
       span.addEventListener('blur', (e) => this.resetIcon(e));
       anchor.addEventListener('click', (e) => this.deleteFromList(e.target));
-      
+
       img.src = expand;
       anchor.appendChild(img);
       span.value = taskList[i].description;
-      
+
       li.appendChild(cbx);
       li.appendChild(span);
       li.appendChild(anchor);
