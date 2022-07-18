@@ -2,7 +2,7 @@
 
 # To Do List
 
-> This project is all about being developed using WebPack and Javascript. Applying the right approach and directing the right source in the configurations.
+> This a to do list project developed using WebPack and Javascript. It displays of tasks and work in a list and they can be edited and deleted from the list.
 
 
 ## Built With
